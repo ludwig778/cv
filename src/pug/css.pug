@@ -1,0 +1,5 @@
+if (typeof(htmlWebpackPlugin) !== 'undefined') && htmlWebpackPlugin.options.inject === false
+  each css in htmlWebpackPlugin.files.css
+    link(href=css, rel='stylesheet')
+
+  link(href="https://fonts.googleapis.com/css2?family=Sansita+Swashed&display=swap", rel='stylesheet')

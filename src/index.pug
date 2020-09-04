@@ -1,0 +1,143 @@
+extends pug/base.pug
+
+block head
+  title Cv Arthur Laurent
+  
+  include pug/css.pug
+
+block content
+  body
+    .container
+      .sections
+        .presentation
+          img.main_image(src='img/arthur_photo.jpg')
+
+          p.name Laurent Arthur
+          p.age 29 ans
+
+        .contact
+          h2.section-title Contact
+        
+          p
+            i.fas.fa-at.fa-1x
+            |  laurent.arthur75@gmail.com
+          p
+            i.fas.fa-map-marker-alt.fa-1x
+            |  64 rue Brancion, Paris 75015
+          p
+            i.fas.fa-phone.fa-1x
+            |  07 81 29 91 41
+          p
+            a(href='https://github.com/ludwig778/')
+              i.fab.fa-github.fa-1x
+              |  Github
+
+        .skills
+          h2.section-title Compétences
+
+          .skill
+            h3 Devops
+            p.
+              Docker | Kubernetes | Ansible | Docker-compose | 
+              Traefik | Prometheus | Grafana | Gitlab-CI | Jenkins | 
+              Terraform | Stack ELK
+
+          .skill
+            h3 Backend
+            p.
+              Python | Django | Postgres | Pytest | 
+              Django-rest-framework | Pandas | Flask | 
+              Mongodb | Redis | Influxdb
+
+          .skill
+            h3 Frontend
+            p.
+              HTML | CSS | Javascript | Webpack | React (hooks) | 
+              Redux | Flexbox | Grid | Bootstrap | Sass | Pug
+
+          .skill
+            h3 Autres
+            p.
+              Bash | Debian | Ubuntu | NGinx | Linux | Qt | Git | 
+              Scraping Web | TCP/IP | DNS | openSSL | AWS | S3
+
+        .interests
+          h2.section-title Intérets
+          p.
+            Guitare | basse | piano | MAO | vélo | natation |
+            nouvelles technologies | économétrie | théorie
+            musicale | cryptomonnaie | Mooc (Udemy)
+
+        .break-column
+
+        .title
+          h1 Ingénieur Logiciel/Devops
+
+        .jobs
+          h2.section-title Expériences
+
+          .job
+            h4.date Septembre 2017 - aujourd’hui (3 ans)
+            h3.name Wifirst - Développeur architecture
+
+            ul.tasks
+              li Mise en place d'outils de déploiement projet avec ansible
+              li Industrialisation de configuration d'équipements actifs
+              li Gestion de référentiels et mise en correspondance de différents SI
+              li Mise en place de l'intégration continue
+              li Référent intégration continue/Docker auprès des équipes
+
+          .job
+            h4.date Septembre 2016 - septembre 2017 (1 an)
+            h3.name Wifirst - Apprenti Ingénieur Système et Réseau
+
+            ul.tasks
+              li Analyse télémétriques des liens fibres et mise en évidence d'anomalies
+              li Analyse de site client, aggrégat de données pour export
+              li Amélioration des interfaces de supervision
+
+          .job
+            h4.date Septembre 2014 - septembre 2016 (2 ans)
+            h3.name Wifirst - Administrateur Système et Réseau
+
+            ul.tasks
+              li Administration de serveurs Linux et d'équipements actifs (switches, routeurs, points d'accès WiFi)
+              li Automatisation de tâches (Python/bash)
+              li Mise en service
+              li Déclenchement et suvi d'interventions
+              li Gestion des lignes ADSL/fibre
+
+          .job
+            h4.date Janvier 2012 - aout 2013 (1 an 8 mois)
+            h3.name Allied Telesis - Technicien support technique niveau 1 en alternance
+
+            ul.tasks
+              li Traitement des demandes clients
+              li Diagnostic matériel et logiciel (Switch, routeur, point d'accès Wifi)
+              li Logistique, et suivi RMA
+              li Configuration spécifique de matériels
+
+        .diplomas
+          h2.section-title Diplômes
+
+          .diploma
+            h4.date 2016-2017
+            .info
+              h3 IPI - Master 2, Expert en ingénierie sécurité informatique
+
+          .diploma
+            h4.date 2014-2016
+            .info
+              h3 IPI - Master 1, Administrateur systèmes, réseaux et base de données
+              p.mention Félicitations du jury
+
+          .diploma
+            h4.date 2011-2013
+            .info
+              h3 Lycée Dorian - BTS Informatique et réseaux pour l’industrie et les services (IRIS)
+
+          .diploma
+            h4.date 2011
+            .info
+              h3 Lycée Dorian - Bac STI électronique
+              p.mention Mention assez bien
