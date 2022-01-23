@@ -1,0 +1,10 @@
+{
+  "extends": [
+    "react-app"
+  ],
+  "rules": {
+    "import/no-anonymous-default-export": ["error", {
+      "allowArrowFunction": true
+    }]
+  }
+}

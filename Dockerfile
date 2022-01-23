@@ -1,4 +1,4 @@
-FROM node:17.2.0-bullseye-slim as builder
+FROM node:17.2.0-bullseye-slim
 
 RUN mkdir /app && chown -R node:node /app
 
@@ -10,9 +10,5 @@ COPY --chown=node:node package.json package-lock.json ./
 RUN npm install
 
 COPY . .
-RUN npm run build:prod
 
-FROM nginx:1.19.3-alpine
-
-COPY --from=builder /app/dist/ /usr/share/nginx/html
-CMD ["nginx", "-g", "daemon off;"]
+ENTRYPOINT ["npm", "run"]

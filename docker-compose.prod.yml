@@ -2,7 +2,7 @@ version: "3.8"
 
 services:
   app:
-    image: cv:${IMAGE_TAG:-latest}
+    image: cv:prod
     build:
       context: .
       dockerfile: Dockerfile.prod

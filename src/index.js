@@ -1,6 +1,10 @@
-import { library, dom } from "@fortawesome/fontawesome-svg-core";
-import { faPhone, faAt, faMapMarkerAlt } from "@fortawesome/free-solid-svg-icons";
-import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import React from "react";
+import ReactDOM from "react-dom";
+import App from "./app";
 
-library.add(faPhone, faAt, faMapMarkerAlt, faGithub);
-dom.watch();
+ReactDOM.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
+  document.getElementById("root")
+);
