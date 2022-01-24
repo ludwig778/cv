@@ -1,0 +1,44 @@
+image: ludwig778/ci-image:latest
+
+stages:
+  - build
+  - push
+  - deploy
+
+variables:
+  PROJECT_NAME: ${CI_PROJECT_NAME}
+  IMAGE_NAME: ${CI_PROJECT_NAME}
+  IMAGE_TAG: ${CI_COMMIT_SHA}
+  IMAGE_REPOSITORY: ludwig778/cv
+  COMPOSE_FILE: docker-compose.ci.yml
+  COMPOSE_PROJECT_NAME: ${CI_PROJECT_NAME}_${CI_JOB_ID}
+
+before_script:
+  - setup_docker_auth
+
+build:
+  stage: build
+  script:
+    - docker-compose build
+
+push_dev:
+  stage: push
+  script:
+    - docker tag $IMAGE_NAME:$IMAGE_TAG $IMAGE_REPOSITORY:dev
+    - docker push $IMAGE_REPOSITORY:dev
+  only:
+    - branches
+  except:
+    - tags
+
+push_master_tag:
+  stage: push
+  script:
+    - docker tag $IMAGE_NAME:$IMAGE_TAG $IMAGE_REPOSITORY:$IMAGE_TAG
+    - docker tag $IMAGE_NAME:$IMAGE_TAG $IMAGE_REPOSITORY:latest
+    - docker push $IMAGE_REPOSITORY:$IMAGE_TAG
+    - docker push $IMAGE_REPOSITORY:latest
+  only:
+    - tags
+  except:
+    - branches
