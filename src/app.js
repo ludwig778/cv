@@ -211,7 +211,7 @@ const SkillSections = () => (
       <SkillSection
         name={"Frontend"}
         skills={
-          "HTML | CSS | Javascript | Typescript | Webpack | React (hooks) | Redux | Jest | Flexbox | Grid | Bootstrap | Sass | Pug | Tailwind"
+          "HTML | CSS | Javascript | Typescript | Webpack | React (hooks, testing library) | Redux | Jest | Flexbox | Grid | Bootstrap | Sass | Pug | Tailwind"
         }
       />
 
