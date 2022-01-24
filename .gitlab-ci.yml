@@ -35,3 +35,27 @@ push_master_tag:
     - tags
   except:
     - branches
+
+deploy_dev:
+  stage: deploy
+  script:
+    - setup_runner_ssh_key
+    - setup_infra_repo
+    - cd infra
+    - make restart_staging ARGS=$PROJECT_NAME
+  only:
+    - branches
+  except:
+    - tags
+
+deploy_master_tag:
+  stage: deploy
+  script:
+    - setup_runner_ssh_key
+    - setup_infra_repo
+    - cd infra
+    - make restart_prod ARGS=$PROJECT_NAME
+  only:
+    - tags
+  except:
+    - branches
